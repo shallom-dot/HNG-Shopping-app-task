@@ -13,21 +13,21 @@ class _MyHomePageState extends State<MyHomePage> {
     {
       'title': 'Product 1',
       'subtitle': 'Best product ever',
-      'imagelocation': 'assets/image1.png',
+      'imagelocation': 'assets/images/image 13.png',
       'price': '\$100',
       'discount': '\$85',
     },
     {
       'title': 'Product 2',
       'subtitle': 'Another great product',
-      'imagelocation': 'assets/image2.png',
+      'imagelocation': 'assets/images/image 16.png',
       'price': '\$150',
       'discount': '\$130',
     },
     {
       'title': 'Offer 1',
       'subtitle': 'Subtitle 1',
-      'imagelocation': 'assets/image1.png',
+      'imagelocation': 'assets/images/image 12.png',
       'price': '\$100',
       'discount': '\$85',
       
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     {
       'title': 'Offer 2',
       'subtitle': 'Subtitle 2',
-      'imagelocation': 'assets/image2.png',
+      'imagelocation': 'assets/images/image 17.png',
       'price': '\$150',
       'discount': '\$130',
       
@@ -43,14 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
      {
       'title': 'Offer 2',
       'subtitle': 'Subtitle 2',
-      'imagelocation': 'assets/image2.png',
+      'imagelocation': 'assets/images/image 11.png',
       'price': '\$150',
       'discount': '\$130',
       
     }, {
       'title': 'Offer 2',
       'subtitle': 'Subtitle 2',
-      'imagelocation': 'assets/image2.png',
+      'imagelocation': 'assets/images/image 15.png',
       'price': '\$150',
       'discount': '\$130',
       

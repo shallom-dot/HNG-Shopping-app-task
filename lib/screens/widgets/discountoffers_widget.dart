@@ -50,7 +50,7 @@ class DiscountOffersWidget extends StatelessWidget {
                     child: Container(
                       constraints: BoxConstraints(
                         maxWidth: width * 0.25,
-                        maxHeight: height * 0.13,
+                        maxHeight: height * 0.12,
                       ),
                       alignment: Alignment.bottomCenter,
                       padding: const EdgeInsets.only(top: 8.0),
