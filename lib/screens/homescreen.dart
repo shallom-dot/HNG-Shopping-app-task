@@ -3,6 +3,8 @@ import 'package:shopping_app/screens/checkoutscreen.dart';
 import 'package:shopping_app/screens/products.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -11,52 +13,49 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final List<Map<String, String>> _products = [
     {
-      'title': 'Product 1',
-      'subtitle': 'Best product ever',
+      'title': 'Workout shirt',
+      'subtitle': 'Best selling',
       'imagelocation': 'assets/images/image 13.png',
       'price': '\$100',
       'discount': '\$85',
     },
     {
-      'title': 'Product 2',
+      'title': 'Beta Alanine',
       'subtitle': 'Another great product',
       'imagelocation': 'assets/images/image 16.png',
       'price': '\$150',
       'discount': '\$130',
     },
     {
-      'title': 'Offer 1',
-      'subtitle': 'Subtitle 1',
+      'title': 'Yoga shirt',
+      'subtitle': 'very comfy',
       'imagelocation': 'assets/images/image 12.png',
       'price': '\$100',
       'discount': '\$85',
-      
     },
     {
-      'title': 'Offer 2',
-      'subtitle': 'Subtitle 2',
+      'title': 'Suplements',
+      'subtitle': 'combo sale',
       'imagelocation': 'assets/images/image 17.png',
       'price': '\$150',
       'discount': '\$130',
-      
     },
-     {
+    {
       'title': 'Offer 2',
       'subtitle': 'Subtitle 2',
       'imagelocation': 'assets/images/image 11.png',
       'price': '\$150',
       'discount': '\$130',
-      
-    }, {
-      'title': 'Offer 2',
+    },
+    {
+      'title': 'Offer 6',
       'subtitle': 'Subtitle 2',
       'imagelocation': 'assets/images/image 15.png',
       'price': '\$150',
       'discount': '\$130',
-      
     },
   ];
-  List<Map<String, dynamic>> _checkoutItems = [];
+  final List<Map<String, dynamic>> _checkoutItems = [];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -99,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Widget> _buildScreens() {
     return [
-      DiscountOffersGrid(products: _products, addItemToCheckout: _addItemToCheckout),
+      DiscountOffersGrid(
+          products: _products, addItemToCheckout: _addItemToCheckout),
       CheckoutScreen(
         checkoutItems: _checkoutItems,
         removeItemFromCheckout: _removeItemFromCheckout,
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping App'),
+        title: const Text('Shopping App'),
       ),
       body: _buildScreens()[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
       routes: {
-        '/order-success': (context) => OrderSuccessScreen(),
+        '/order-success': (context) => const OrderSuccessScreen(),
       },
     );
   }
