@@ -65,11 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _addItemToCheckout(Map<String, String> item) {
     setState(() {
-      final existingItem = _checkoutItems.firstWhere(
-          (element) => element['title'] == item['title'],
-          orElse: () => {});
-      if (existingItem.isNotEmpty) {
-        existingItem['quantity'] += 1;
+      final existingItemIndex = _checkoutItems.indexWhere((element) => element['title'] == item['title']);
+      if (existingItemIndex != -1) {
+        _checkoutItems[existingItemIndex]['quantity'] += 1;
       } else {
         _checkoutItems.add({
           'title': item['title'],
@@ -81,15 +79,21 @@ class _MyHomePageState extends State<MyHomePage> {
         });
       }
     });
+
+    // Show a SnackBar indicating that the item was added to cart
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${item['title']} added to cart'),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
 
   void _removeItemFromCheckout(Map<String, dynamic> item) {
     setState(() {
-      final existingItem = _checkoutItems.firstWhere(
-          (element) => element['title'] == item['title'],
-          orElse: () => {});
-      if (existingItem.isNotEmpty && existingItem['quantity'] > 1) {
-        existingItem['quantity'] -= 1;
+      final existingItemIndex = _checkoutItems.indexWhere((element) => element['title'] == item['title']);
+      if (existingItemIndex != -1 && _checkoutItems[existingItemIndex]['quantity'] > 1) {
+        _checkoutItems[existingItemIndex]['quantity'] -= 1;
       } else {
         _checkoutItems.remove(item);
       }
@@ -98,12 +102,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Widget> _buildScreens() {
     return [
-      DiscountOffersGrid(
-          products: _products, addItemToCheckout: _addItemToCheckout),
+      DiscountOffersGrid(products: _products, addItemToCheckout: _addItemToCheckout),
       CheckoutScreen(
         checkoutItems: _checkoutItems,
         removeItemFromCheckout: _removeItemFromCheckout,
-        addItemToCheckout: _addItemToCheckout, // Include addItemToCheckout here
+        addItemToCheckout: _addItemToCheckout,
       ),
     ];
   }
