@@ -63,6 +63,12 @@ discount_offers_widget.dart: Custom widget to display discounted products.
 shipping_address.dart: Widget for entering the shipping address.
 
 ## Screenshots
+![product page](assets/images/Screenshot_1719953388.png)
+![empty cart](assets/images/Screenshot_1719953395.png)
+![add to cart](assets/images/Screenshot_1719953401.png)
+![items in cart](assets/images/Screenshot_1719953420.png)
+![order succesful](assets/images/Screenshot_1719953427.png)
+
 
 
 
