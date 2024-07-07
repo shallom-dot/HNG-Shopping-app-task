@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('${item['title']} added to cart'),
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -135,3 +135,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
